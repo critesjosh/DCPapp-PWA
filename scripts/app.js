@@ -19,20 +19,24 @@
         //for computer
         document.getElementById('silence').addEventListener('mousedown', function(){
             document.getElementById('audio').muted = true;
+            document.getElementById('silence').textContent = 'Release to Alert';
         });
         //for mobile browser
         document.getElementById('silence').addEventListener('touchstart', function(){
             document.getElementById('audio').muted = true;
+            document.getElementById('silence').textContent = 'Release to Alert';
         });
 
         //restart audio when the button is released
         //for computer
         document.getElementById('silence').addEventListener('mouseup', function(){
             document.getElementById('audio').muted = false;
+            document.getElementById('silence').textContent = 'Press to Silence';
         });
         //for mobile brower
         document.getElementById('silence').addEventListener('touchend', function(){
             document.getElementById('audio').muted = false;
+            document.getElementById('silence').textContent = 'Press to Silence';
         });
     }
 
@@ -61,6 +65,16 @@
       navigator.serviceWorker
                .register('./service-worker.js')
                .then(function() { console.log('Service Worker Registered'); });
+    }
+
+        /* Set the width of the side navigation to 250px */
+    openNav = function () {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    closeNav = function() {
+        document.getElementById("mySidenav").style.width = "0";
     }
 
 })();

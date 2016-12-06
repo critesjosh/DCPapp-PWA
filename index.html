@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <meta name="description" content="a creativity app that helps you catch your dreams">
   <title>Dream Catcher</title>
   <link rel="stylesheet" type="text/css" href="styles/main.css">
@@ -20,8 +19,18 @@
 </head>
 <body>
 
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">How it works</a>
+      <a href="#">Sign in</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- Use any element to open the sidenav -->
+    <span id="menu" onclick="openNav()">Menu</span>
+
   <header class="header">
-    <h1 class="header__title">Dreamcatcher App</h1>
+    <h1 class="header__title">Dream Catcher App</h1>
   </header>
 
   <div class="button-div">
