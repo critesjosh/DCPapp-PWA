@@ -3,7 +3,7 @@ var filesToCache = [
     '/',
     '/index.html',
     '/scripts/app.js',
-    '/sounds/490.wav',
+    '/sounds/490.mp3',
     '/styles/main.css'
 ];
 

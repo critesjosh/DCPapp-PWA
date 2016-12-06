@@ -11,7 +11,7 @@
         silenceButtonDiv.setAttribute("class", "button-div");
         var silenceButton = document.createElement("button");
         silenceButton.setAttribute("id", "silence");
-        silenceButton.textContent = "Silence!!";
+        silenceButton.textContent = 'Press to Silence';
         silenceButtonDiv.appendChild(silenceButton);
         document.body.appendChild(silenceButtonDiv);
 
