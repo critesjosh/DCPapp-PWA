@@ -33,10 +33,6 @@ h1 {
     font-size: 24px;
 }
 
-header {
-    text-align: center;
-}
-
 .button-div {
     margin-top: 20px;
     text-align: center;
@@ -52,13 +48,17 @@ header {
     background-color: white;
 }
 
-#silence {
+#relax {
     height: 200px;
     width: 50%;
     font-size: 26px;
     border: 5px solid black;
     border-radius: 50px;
     background-color: white;
+}
+
+.muted {
+    color: lightgrey;
 }
 
 #mute {

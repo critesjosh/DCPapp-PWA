@@ -1,4 +1,7 @@
 (function() {
+    var relaxButton;
+    var muteButton;
+
     document.getElementById('start').addEventListener('click', function(){
         document.getElementById('audio').play();
         document.getElementById('start').remove();
@@ -9,54 +12,64 @@
     var createSilenceButton = function(){
         var silenceButtonDiv = document.createElement("div");
         silenceButtonDiv.setAttribute("class", "button-div");
-        var silenceButton = document.createElement("button");
-        silenceButton.setAttribute("id", "silence");
-        silenceButton.textContent = 'Press to Silence';
-        silenceButtonDiv.appendChild(silenceButton);
+        relaxButton = document.createElement("button");
+        relaxButton.setAttribute("id", "relax");
+        relaxButton.textContent = 'Press to Silence';
+        silenceButtonDiv.appendChild(relaxButton);
         document.body.appendChild(silenceButtonDiv);
 
         //silence audio when button is pressed
         //for computer
-        document.getElementById('silence').addEventListener('mousedown', function(){
-            document.getElementById('audio').muted = true;
-            document.getElementById('silence').textContent = 'Release to Alert';
+        relaxButton.addEventListener('mousedown', function(){
+            if (!relaxButton.classList.contains("muted")){
+                document.getElementById('audio').muted = true;
+                relaxButton.textContent = 'Release to Alert';
+            }
         });
         //for mobile browser
-        document.getElementById('silence').addEventListener('touchstart', function(){
-            document.getElementById('audio').muted = true;
-            document.getElementById('silence').textContent = 'Release to Alert';
+        relaxButton.addEventListener('touchstart', function(){
+            if (!relaxButton.classList.contains("muted")) {
+                document.getElementById('audio').muted = true;
+                relaxButton.textContent = 'Release to Alert';
+            }
         });
 
         //restart audio when the button is released
         //for computer
-        document.getElementById('silence').addEventListener('mouseup', function(){
-            document.getElementById('audio').muted = false;
-            document.getElementById('silence').textContent = 'Press to Silence';
+        relaxButton.addEventListener('mouseup', function(){
+            if (!relaxButton.classList.contains("muted")) {
+                document.getElementById('audio').muted = false;
+                relaxButton.textContent = 'Press to Silence';
+            }
         });
         //for mobile brower
-        document.getElementById('silence').addEventListener('touchend', function(){
-            document.getElementById('audio').muted = false;
-            document.getElementById('silence').textContent = 'Press to Silence';
+        document.getElementById('relax').addEventListener('touchend', function(){
+            if (!relaxButton.classList.contains("muted")) {
+                document.getElementById('audio').muted = false;
+                relaxButton.textContent = 'Press to Silence';
+            }
         });
     }
 
     var createMuteButton = function () {
         var muteButtonDiv = document.createElement("div");
         muteButtonDiv.setAttribute("class", "button-div");
-        var muteButton = document.createElement("button");
+        muteButton = document.createElement("button");
         muteButton.setAttribute("id", "mute");
         muteButton.textContent = "Mute";
         muteButtonDiv.appendChild(muteButton);
         document.body.appendChild(muteButtonDiv);
 
 
-        document.getElementById('mute').addEventListener('click', function(){
+        muteButton.addEventListener('click', function(){
             if (document.getElementById('audio').muted === false) {
-                document.getElementById('mute').textContent = "UnMute";
+                muteButton.textContent = "UnMute";
+                relaxButton.setAttribute("class", "muted");
                 document.getElementById('audio').muted = true;
             } else {
                 document.getElementById('audio').muted = false;
-                document.getElementById('mute').textContent = "ReMute";
+                relaxButton.setAttribute("class", "");
+                muteButton.textContent = "ReMute";
             };
         });
     }
