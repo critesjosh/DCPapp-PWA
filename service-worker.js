@@ -1,10 +1,14 @@
 var cacheName = 'dreamCatcherPWA';
 var filesToCache = [
-    '/',
-    '/index.html',
-    '/scripts/app.js',
-    '/sounds/490.mp3',
-    '/styles/main.css'
+    '/josh/DCPapp-PWA',
+    '/josh/DCPapp-PWA/index.html',
+    '/josh/DCPapp-PWA/scripts/app.js',
+    '/josh/DCPapp-PWA/sounds/490.mp3',
+    '/josh/DCPapp-PWA/styles/main.css',
+    '/josh/DCPapp-PWA/images/icons/icon-50x50.png',
+    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+    'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
+    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
 ];
 
 self.addEventListener('install', function(e) {
