@@ -1,6 +1,4 @@
 (function() {
-    var relaxButton;
-    var muteButton;
 
     document.getElementById('start').addEventListener('click', function(){
         document.getElementById('audio').play();
@@ -8,6 +6,15 @@
         createSilenceButton();
         createMuteButton();
     });
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+               .register('./service-worker.js')
+               .then(function() { console.log('Service Worker Registered'); });
+    }
+
+    var relaxButton;
+    var muteButton;
 
     var createSilenceButton = function(){
         var silenceButtonDiv = document.createElement("div");
@@ -74,20 +81,5 @@
         });
     }
 
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-               .register('./service-worker.js')
-               .then(function() { console.log('Service Worker Registered'); });
-    }
-
-        /* Set the width of the side navigation to 250px */
-    openNav = function () {
-        document.getElementById("mySidenav").style.width = "250px";
-    }
-
-    /* Set the width of the side navigation to 0 */
-    closeNav = function() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
 
 })();

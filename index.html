@@ -7,6 +7,7 @@
   <meta name="description" content="a creativity app that helps you catch your dreams">
   <title>Dream Catcher</title>
   <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="manifest" href="manifest.json">
   <!-- Add to home screen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -18,28 +19,54 @@
   <meta name="msapplication-TileColor" content="#2F3BA2">
 </head>
 <body>
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img id="brand" src="images/icons/icon-128x128.png"></a>
+        </div>
 
-    <div id="mySidenav" class="sidenav">
-      <p id="menu-title" style="color: white">The Dream Catcher App</p>
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="#">Sign in</a>
-      <a href="#">Contact</a>
-    </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav">
+           <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+             <ul class="dropdown-menu">
+               <li><a href="#">App</a></li>
+               <li><a href="#">How it works</a></li>
+               <li role="separator" class="divider"></li>
+               <li><a href="#">Sign In</a></li>
+               <li role="separator" class="divider"></li>
+               <li><a href="#">Contact Me</a></li>
+             </ul>
+           </li>
+         </ul>
+       </div><!-- /.navbar-collapse -->
+   </nav>
+</div>
+<div class="container-fluid">
 
-    <!-- Use any element to open the sidenav -->
-    <span id="menu" onclick="openNav()">Menu</span>
-
-  <header class="header">
-    <h1 class="header__title">Dream Catcher App</h1>
-  </header>
-
-  <div class="button-div">
-      <button id="start">Start</button>
-  </div>
+        <div class="row">
+            <header class="header">
+              <h1 class="header__title">Dream Catcher App</h1>
+            </header>
+        </div>
+        <div class="row">
+            <div class="button-div">
+                <button id="start">Start</button>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
 
   <audio id='audio' loop src="sounds/490.mp3"><audio>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="scripts/app.js"></script>
-
 </body>
 </html>

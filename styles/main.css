@@ -3,23 +3,28 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: 'Helvetica', 'Verdana', sans-serif;
+  font-family: 'Helvetica', 'Verdana', sans-serif !important;
   font-weight: 400;
   font-display: optional;
   color: #444;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  background-color: #1E90FF !important;
+ }
 
 html {
   overflow: hidden;
 }
 
-body {
-    background-color: #1E90FF;
+.navbar-brand {
+    width: auto;
+    padding: 0 0 0 0 !important;
+}
+
+#brand {
+    height: 50px;
 }
 
 #menu {
-    color: white;
+    color: white !important;
     padding-left: 20px;
     font-size: 24px;
     font-weight: 400;
@@ -29,7 +34,7 @@ body {
 
 h1 {
     text-align: center;
-    color: white;
+    color: white !important;
     font-size: 24px;
 }
 
