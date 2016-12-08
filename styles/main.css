@@ -14,6 +14,10 @@ html {
   overflow: hidden;
 }
 
+.navbar {
+    background-color: white !important;
+}
+
 .navbar-brand {
     width: auto;
     padding: 0 0 0 0 !important;
