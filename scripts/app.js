@@ -147,13 +147,21 @@
         div2.appendChild(smallHeader);
         var div3 = document.createElement('div');
         div3.setAttribute("class", "col-xs-12 video-container");
-        var iframe = document.createElement('iframe');
-        iframe.setAttribute("src", "https://www.youtube.com/embed/YTP8zNSquHA");
-        iframe.setAttribute("height", "315");
-        iframe.setAttribute("width", "560");
-        iframe.setAttribute("allowfullscreen", "");
-        iframe.setAttribute("frameborder", "0");
-        div3.appendChild(iframe);
+        if (navigator.onLine === true) {
+            var iframe = document.createElement('iframe');
+            iframe.setAttribute("src", "https://www.youtube.com/embed/YTP8zNSquHA");
+            iframe.setAttribute("height", "315");
+            iframe.setAttribute("width", "560");
+            iframe.setAttribute("allowfullscreen", "");
+            iframe.setAttribute("frameborder", "0");
+            div3.appendChild(iframe);
+        } else {
+            var altText = document.createElement('p');
+            altText.setAttribute("class", "text-center");
+            altText.textContent = "You must have an internet connection to watch this video.";
+            div3.append(altText);
+        }
+
         div0.append(div1, div2, div3);
         $("#content").append(div0);
     }
